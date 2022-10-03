@@ -12,7 +12,7 @@ const postComments = 15
 // const postMessage = `O post "${postTitle}", de ${postAuthor}, tem ${postComments} comentários.`
 //console.log(postMessage)
 
-// Criando template strings
+// Criando template HTML
 const html = `
  <h2>${postTitle}</h2>
  <p>Autor: ${postAuthor}</p>
