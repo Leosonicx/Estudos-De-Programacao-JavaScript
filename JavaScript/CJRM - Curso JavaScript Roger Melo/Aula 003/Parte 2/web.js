@@ -1,3 +1,3 @@
-let emptiness // Toda vez que não atribuimos o valor para uma variável, e tentamos usa-la, o Js automaticamente atribui UNDEFINED para essa variável.
+let emptiness = null // Null é um valor indicado INTENCIONALMENTE que não existe valor na variável.
 
-console.log(emptiness, emptiness + 3, `O valor é ${emptiness}`) // E como a emptiness é undenined, quando tentamos usar uma exmpressão nela (emptiness + 3), obtemos um NaN (Not a number). e quando inserimos um undefined dentro de uma variável de uma string (`${emptiness}`), vemos que undefined é convertido para uma string (Ao invés dele mostrar emptiness no console, ele irá mostrar undefined).
+console.log(emptiness, emptiness + 3, `O valor é ${emptiness}`) // Ao executar, o primeiro valor será exibido como null, o segundo valor exibido será 3, porque null é equivalente a 0, e o terceiro valor podemos ver que o null é convertido para uma string. 
