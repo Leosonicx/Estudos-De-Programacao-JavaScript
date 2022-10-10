@@ -7,6 +7,12 @@
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
 
+function multiplica (multiplicadorUm = 0, multiplicadorDois = 0) {
+  return multiplicadorUm * multiplicadorDois
+}
+
+console.log(multiplica(5, 5))
+
 /*
   02
 
@@ -14,6 +20,11 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+
+const divisor = function(divisorUm = 0, divisorDois = 0) {
+  return divisorUm / divisorDois
+}
+  console.log(divisor(5, 5))
 
 /*
   03
@@ -27,6 +38,16 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
+
+const valor = function (valorUnd = 'Ficou undefined, irmão.') {
+  console.log(valorUnd)
+}
+
+for (let i = 0; i < 7; i++) { 
+  let loop = i + 1
+
+  valor(`Esta é a ${loop}ª vez que essa string é exibida.`)
+}
 
 /*
   04
