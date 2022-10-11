@@ -43,11 +43,11 @@ const valor = function (valorUnd = 'Ficou undefined, irmão.') {
   console.log(valorUnd)
 }
 
-for (let i = 0; i < 7; i++) { 
-  let loop = i + 1
+// for (let i = 0; i < 7; i++) { 
+//   let loop = i + 1
 
-  valor(`Esta é a ${loop}ª vez que essa string é exibida.`)
-}
+//   valor(`Esta é a ${loop}ª vez que essa string é exibida.`)
+// }
 
 /*
   04
@@ -62,6 +62,22 @@ for (let i = 0; i < 7; i++) {
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
+let newArray = []
+
+const transformToUpperCase = function (array = []) {
+  for (let i = 0; i < array.length; i++) {
+    const wordInUpperCase = array[i].toUpperCase()
+    
+    newArray.push(wordInUpperCase)
+  }
+
+  return newArray
+}
+
+const millennialWordsInUpperCase = transformToUpperCase(millennialWords)
+
+console.log(millennialWordsInUpperCase)
+
 /*
   05
 
@@ -75,6 +91,24 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
 
+let positiveNumbersCounter = 0
+let negativeNumbersCounter = 0
+
+const isPositive = function (number = 0) {
+  return number >= 1
+}
+
+for (let i = 0; i < randomNumbers.length; i++) {
+  const isPositiveNumber = isPositive(randomNumbers[i])
+
+  if (isPositiveNumber) {
+    positiveNumbersCounter++
+  } else {
+    negativeNumbersCounter++
+  }
+}
+
+console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${positiveNumbersCounter} positivos e ${negativeNumbersCounter} negativos.`)
 /*
   06
 
@@ -85,7 +119,24 @@ const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+const getOddNumbers = function (numbers = []) {
+  let newArray = []
+
+  for (let i = 0; i < numbers.length; i++) {
+    const isOddNumber = numbers[i] % 2 !== 0
+    const number = numbers[i]
+
+    if (isOddNumber) {
+      newArray.push(number)
+    }
+  }
+
+  return newArray
+}
+
+const odd = getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+
+console.log(odd)
 
 /*
   07
@@ -123,3 +174,13 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.' }
 ]
+
+let sentence = ''
+
+for (let i = 0; i < functions.length; i++) {
+  const frases = `${functions[i]()} `
+
+  sentence += frases
+}
+
+console.log(sentence)
