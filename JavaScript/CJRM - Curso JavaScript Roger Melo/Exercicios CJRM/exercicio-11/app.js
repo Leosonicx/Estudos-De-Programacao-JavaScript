@@ -7,6 +7,12 @@
 
 const myName = 'Leonardo'
 
+for (let i = 0; i < 5; i++) {
+  console.log(`Dentro do bloco de código: ${myName}`)
+}
+
+console.log(myName)
+
 /*
   02
 
@@ -20,6 +26,15 @@ const myName = 'Leonardo'
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
+
+// const logAge = () => {
+//   let age = 20
+//   console.log(age)
+// }
+
+// logAge()
+
+// console.log(age) // O erro da devido a age ter um escopo LOCAL.
 
 /*
   03
@@ -39,11 +54,35 @@ const myName = 'Leonardo'
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
 
+let car = {
+  name: 'Palio Fire',
+  brand: 'Fiat',
+  colors: ['Branco', 'Branco neve', 'Branco amarelado'],
+  isRunning: false, 
+  run () {
+    this.isRunning = true
+    return `${this.name} está em movimento`
+  },
+  stop () {
+    this.isRunning = false
+    return `O ${this.name} está parado.`
+  },
+  getColorMessage () {
+    const lastItem = this.colors[this.colors.length - 1]
+    const colorCar = this.colors.join(', ').replace(lastItem, `e ${lastItem}`)
+
+    return `O ${this.name} está disponível nas cores ${colorCar}`
+  }
+}
+
 /*
   04
 
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
+
+console.log(car.run())
+console.log(car.isRunning === true)
 
 /*
   05
@@ -51,11 +90,16 @@ const myName = 'Leonardo'
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
 
+console.log(car.stop())
+console.log(car.isRunning === false)
+
 /*
   06
 
   - Exiba, no console, a mensagem com as cores do carro.
 */
+
+console.log(car.getColorMessage())
 
 /*
   07
@@ -63,3 +107,5 @@ const myName = 'Leonardo'
   - Exiba, no console, a mensagem "O carro é um MARCA_DO_CARRO NOME_DO_CARRO";
   - Utilize a notação de colchetes para acessar as propriedades do carro.
 */
+
+console.log(`O carro é um ${car['brand']} ${car['name']}`)
