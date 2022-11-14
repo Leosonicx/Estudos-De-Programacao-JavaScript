@@ -13,10 +13,16 @@ const getCatInfo = () => {
   let age = 3
   const color = 'Cinza'
   
-  return { name: name, age: age, color: color}
+  return { name, age, color }
 }
 
-console.log(`${getCatInfo().name} é um gato ${getCatInfo().color} de ${getCatInfo().age} anos.`)
+// const name = getCatInfo().name
+// const age = getCatInfo().age
+// const color = getCatInfo().color
+
+// const = { name, age, color } = getCatInfo() // É chamado de destruct assignment em objetos.
+
+// console.log(`${name} é um gato ${color} de ${age} anos.`)
 
 /*
   02
@@ -33,7 +39,9 @@ const external = () => {
     const extraInternal = () => {
       console.log(movie.toUpperCase())
     }
+    extraInternal()
   }
+  internal()
 }
 
 external()
@@ -48,6 +56,9 @@ external()
 */
 
 let randomNumbers = [3, 2, 1]
+randomNumbers.reverse() // O método reverse inverte a ordem dos arrays.
+console.log(randomNumbers)
+
 
 /*
   04
@@ -62,6 +73,10 @@ let crazyArray = [
   function getMessage () { return 'hi' },
   [ 5, 96, 53  ]
 ]
+
+crazyArray.shift()
+console.log(crazyArray)
+
 
 /*
   05
