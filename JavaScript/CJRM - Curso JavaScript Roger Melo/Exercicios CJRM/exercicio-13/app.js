@@ -20,9 +20,9 @@ const getCatInfo = () => {
 // const age = getCatInfo().age
 // const color = getCatInfo().color
 
-// const = { name, age, color } = getCatInfo() // É chamado de destruct assignment em objetos.
+const { name, age, color } = getCatInfo() // A esquerda do primeiro sinal de atribuição (=) é chamado de destruct assignment em objetos. Após colocarmos o valor do objeto dentro do {} ele irá RECEBER o valor da propriedade que contenha no objeto.
 
-// console.log(`${name} é um gato ${color} de ${age} anos.`)
+console.log(`${name} é um gato ${color} de ${age} anos.`)
 
 /*
   02
@@ -95,6 +95,10 @@ const dogs = [
   { name: 'Xica', age: 6, gender: 'Female', breed: 'Chihuahua' }
 ]
 
+const foundZequinha = dogs.find(dog => dog.name === 'Zequinha')
+
+console.log(foundZequinha)
+
 /*
   06
 
@@ -127,6 +131,10 @@ const dogs = [
   </section>
 */
 
+const h1 = document.querySelector('.main-title')
+
+console.log(h1)
+
 /*
   07
 
@@ -134,3 +142,7 @@ const dogs = [
     página, através da classe deles;
   - Exiba esse NodeList no console.
 */
+
+const allH2 = document.querySelectorAll('.secondary-title')
+
+console.log(allH2)
