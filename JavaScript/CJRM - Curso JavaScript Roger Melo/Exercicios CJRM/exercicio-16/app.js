@@ -7,16 +7,44 @@
 
 const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
+const h2 = document.querySelector('h2')
+const egg = document.querySelector('.egg')
+const button = document.querySelector('button')
 
-elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
-  })
-})
+// elementsInsideDiv.forEach(element => {
+//   element.addEventListener('click', event => {
+//     event.stopPropagation()
+//     h2.textContent = `Clicou no ${event.target.tagName.toLowerCase()}, filho da div.`
+//   })
+// })
 
-div.addEventListener('click', () => {
-  console.log('Clicou na div.')
-})
+const clickDiv = ({ target: { tagName} }) => {
+  const clickedElementName = tagName.toLowerCase()
+
+  if (clickedElementName === 'div') {
+    h2.textContent = 'Clicou na div'
+    return
+  }
+
+  h2.textContent = `Clicou no ${clickedElementName}, filho da div.`
+}
+
+const copyText = () => {
+  console.log('Texto copiado!')
+}
+
+const mouseMouve = ({ offsetX, offsetY}) => {
+  egg.textContent = `Eixo X: ${offsetX} e Eixo Y: ${offsetY}`
+} 
+
+const changeEggColor = () => {
+  egg.style.background = 'lightgoldenrodyellow'
+}
+
+egg.addEventListener('mousemove', mouseMouve)
+h2.addEventListener('copy', copyText)
+div.addEventListener('click', clickDiv)
+button.addEventListener('click', changeEggColor)
 
 /*
   02
@@ -76,3 +104,10 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
+const essaPessoaPrograma = people.some(({ profession  }) =>
+   profession === 'Front-end developer')
+
+
+if (essaPessoaPrograma) {
+  console.log(`O array people contém, no mínimo, um(a) Front-end developer.`)
+}
