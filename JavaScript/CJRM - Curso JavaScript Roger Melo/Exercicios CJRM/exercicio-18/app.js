@@ -21,6 +21,26 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 
+const inputUsername = document.querySelector('#username')
+const p = document.createElement('p')
+
+inputUsername.addEventListener('keyup', event => {
+  const inputValue = event.target.value
+  const usernameRegex = /^[a-zA-Z]{6,}$/
+
+  if (!usernameRegex.test(inputValue)) {
+    p.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
+    p.setAttribute('class', 'username-help-feedback')
+    event.target.insertAdjacentElement('afterend', p)
+    return
+  }
+
+  p.textContent = 'Username válido =)'
+  p.setAttribute('class', 'username-success-feedback')
+  event.target.insertAdjacentElement('afterend', p)
+})
+
+
 /*
   02
 
