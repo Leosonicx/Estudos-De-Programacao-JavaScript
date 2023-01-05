@@ -131,4 +131,16 @@ const validSubmitInfo = {
     2) Pesquisar no MDN.
 */
 
-console.log(some())
+const some = (array, func) => {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i])
+    if (func(array[i])) {
+      return true
+    }
+  }
+
+  return false
+}
+
+console.log(some([1,2,3], item => item === 2))
+console.log(some([4,5,6], item => item === 3))
